@@ -122,3 +122,112 @@ footer {
     background-color: var(--color-secondary);
 }
 
+.optionSource {
+    margin: 20px;
+}
+
+.optionSource input[type='radio']:not(:first-child) {
+    margin-left: 20px;
+}
+
+.zoneProposition {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 10px 0 10px 0;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: white;
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+.zoneSaisie {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.zoneSaisie input[type='text'] {
+    width: 80%;
+}
+
+.zoneSaisie button {
+    width: 20%;
+}
+
+.zoneScore {
+    font-size: 20px;
+}
+
+.zonePartage {
+    padding-top: 20px;
+}
+
+.popupBackground {
+    display: none;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    font-size: 17px;
+    font-weight: 500;
+    background-color: #f76c5e;
+    border-radius: 30px;
+    z-index: 1;
+}
+
+
+.active {
+    display: flex !important;
+}
+
+.popup p {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.popup div {
+    font-size: 25px;
+    padding : 5px;
+    padding-bottom: 15px;
+}
+
+.popup input {
+    margin-bottom: 10px;
+}
+
+.popup button {
+    margin: 5px;
+}
+
+@media screen and (max-width: 1200px) {
+    main {
+        width: 60%;
+        padding: 30px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    main {
+        width: 90%;
+        padding: 10px;
+    }
+}
