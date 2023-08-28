@@ -1,25 +1,52 @@
+/**
+ * Cette fonction affiche dans la console le score de l'utilisateur
+ * @param {number} score : le score de l'utilisateur
+ * @param {number} nbMotsProposes : le nombre de mots proposés à l'utilisateur
+ */
 function afficherResultat(score, nbMotsProposes) {
     let spanScore = document.querySelector(".zoneScore span")
     let affichageScore = `${score} / ${nbMotsProposes}`
     spanScore.innerText = affichageScore
 }
 
+/**
+ * Cette fonction affiche une proposition, que le joueur devra recopier, 
+ * dans la zone "zoneProposition"
+ * @param {string} proposition : la proposition à afficher
+ */
 function afficherProposition(proposition) {
     let zoneProposition = document.querySelector(".zoneProposition")
     zoneProposition.innerText = proposition
 }
 
+/**
+ * Cette fonction construit et affiche l'email. 
+ * @param {string} nom : le nom du joueur
+ * @param {string} email : l'email de la personne avec qui il veut partager son score
+ * @param {string} score : le score. 
+ */
 function afficherEmail(nom, email, score) {
     let mailto = `mailto:${email}?subject=Partage du score Azertype&body=Salut, je suis ${nom} et je viens de réaliser le score ${score} sur le site d'Azertype !`
     location.href = mailto
 }
 
+/**
+ * Cette fonction prend un nom en paramètre et valide qu'il est au bon format
+ * ici : deux caractères au minimum
+ * @param {string} nom 
+ * @return {boolean}
+ */
 function validerNom(nom) {
     if (nom.length < 2) {
         throw new Error("Le nom est trop court. ")
     }
 }
 
+/**
+ * Cette fonction prend un email en paramètre et valide qu'il est au bon format. 
+ * @param {string} email 
+ * @return {boolean}
+ */
 function validerEmail(email) {
     let emailRegExp = new RegExp("[a-z0-9._-]+@[a-z0-9._-]+\\.[a-z0-9._-]+")
     if (!emailRegExp.test(email)) {
@@ -68,7 +95,7 @@ function lancerJeu() {
 
     let btnValiderMot = document.getElementById("btnValiderMot")
     let listeBtnRadio = document.querySelectorAll(".optionSource input")
-    let inputEcriture = document.getElementById("inputEcriture")
+    let inputEcriture = document.getElementById("inputEcriture")   
 
 
     afficherProposition(listeProposition[i])
